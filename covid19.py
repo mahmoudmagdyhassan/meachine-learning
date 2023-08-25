@@ -12,12 +12,6 @@ from plotly.subplots import make_subplots
 st.set_page_config (page_title = 'covid19' , layout = "wide" , page_icon = '📊')
 
 
-with st.sidebar:
-    st.header('covid19 analysis')
-    About = st.sidebar.checkbox(":blue[covid19 analysis EDA]")
-    Planning = st.sidebar.checkbox(":orange[Show About Application]")
-    About_me = st.sidebar.checkbox(":green[Show About me]")
-
 
 
 "----------------------------------------------------------------------------------------"
