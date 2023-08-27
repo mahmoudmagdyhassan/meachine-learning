@@ -1,10 +1,8 @@
 
 import pandas as pd
-import seaborn as sns
-sns.set()
+
 import streamlit as st
 import plotly.express as px
-from PIL import Image
 
 
 st.set_page_config (page_title = 'New York City  EDA 🚴‍♂️' , layout = "wide" , page_icon = '📊')
