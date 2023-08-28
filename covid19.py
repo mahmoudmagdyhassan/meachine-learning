@@ -379,11 +379,29 @@ with maps:
     st.header(' maps 🔴')
     with st.container():
         df_all_max = df.groupby('country').max()
+        df_2020_max = df[df.year == 2020].groupby('country').max()
+        df_2021_max = df[df.year == 2021].groupby('country').max()
+        df_2022_max = df[df.year == 2022].groupby('country').max()
+        df_2023_max = df[df.year == 2023].groupby('country').max()
+
     
 
         map1=px.choropleth(df_all_max, locations=df_all_max.index, locationmode='country names', color=df_all_max['cumulative_cases'],
-            width= 1000, height= 600, title='World wide Cumulative Cases covid19 cases', color_continuous_scale='Reds')  # Try Greens, Purples, Blues
-  
-        st.map(map,use_container_width=True)
+        width= 1000, height= 600, title='World wide Cumulative Cases covid19 cases', color_continuous_scale='Reds')  
+        map2=px.choropleth(df_2020_max, locations=df_2020_max.index, locationmode='country names', color=df_2020_max['cumulative_cases'],
+        width= 1000, height= 600, title='World wide Cumulative Cases covid19 cases', color_continuous_scale='Reds')  
+        map3=px.choropleth(df_2021_max, locations=df_2021_max.index, locationmode='country names', color=df_2021_max['cumulative_cases'],
+        width= 1000, height= 600, title='World wide Cumulative Cases covid19 cases', color_continuous_scale='Reds') 
+        map4=px.choropleth(df_2022_max, locations=df_2022_max.index, locationmode='country names', color=df_2022_max['cumulative_cases'],
+        width= 1000, height= 600, title='World wide Cumulative Cases covid19 cases', color_continuous_scale='Reds') 
+        map5=px.choropleth(df_2023_max, locations=df_2023_max.index, locationmode='country names', color=df_2023_max['cumulative_cases'],
+        width= 1000, height= 600, title='World wide Cumulative Cases covid19 cases', color_continuous_scale='Reds') 
+        st.plotly_chart(map1,use_container_width=True)
+        st.plotly_chart(map2,use_container_width=True)
+        st.plotly_chart(map3,use_container_width=True)
+        st.plotly_chart(map4,use_container_width=True)
+        st.plotly_chart(map5,use_container_width=True)
+
+
 
  
